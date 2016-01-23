@@ -1,0 +1,21 @@
+{
+  "name": "bizzyChallenge",
+  "version": "0.0.1",
+  "homepage": "https://github.com/czengg/bizzyChallenge",
+  "authors": [
+    "czengg <czeng67@gmail.com>"
+  ],
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "www/lib"
+  ],
+  "dependencies": {
+    "angular": "~1.4.9"
+  }
+}
