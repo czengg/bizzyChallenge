@@ -1,0 +1,20 @@
+<ul flex="80" layout="column" layout-align="end">
+  <li ng-repeat="campaign in vm.campaigns | orderBy:'date':true"
+      layout="row"
+      layout-align="start center"
+      class="btn overview"
+      ng-click="vm.openCampaign(campaign.id)">
+    <div flex="5" layout="end center">
+      <md-icon md-svg-src="img/fire.svg"
+             ng-if="campaign.status === 'hot'"></md-icon>
+      <md-icon md-svg-src="img/new.svg"
+               ng-if="campaign.status === 'new'"></md-icon>
+      <md-icon ng-if="campaign.status === 'none'"></md-icon>
+    </div>
+
+    <div flex layout="row" layout-align="start end">
+      <h2>{{campaign.name}}</h2>
+      <h4>{{campaign.date | date:'MM/dd/yyyy'}}</h4>
+    </div>
+  </li>
+</ul>

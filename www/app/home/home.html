@@ -1,2 +1,37 @@
-<md-toolbar class="md-menu-toolbar">
-</md-toolbar>
+<md-sidenav class="md-sidetoolbar-left blue-bg"
+            md-component-id="hamburger"
+            md-is-locked-open="$mdMedia('gt-sm')">
+  <md-toolbar class="md-menu-toolbar md-primary" layout layout-align="center center">
+    <img src="img/w_plain_logo.png" class="logo">
+  </md-toolbar>
+  <md-content>
+    <md-menu-bar layout="column">
+      <button ng-repeat="menuItem in vm.menuItems"
+              ng-click="vm.openMenuItem(menuItem.state)"
+              ui-sref-active-eq="active"
+              ui-sref="{{menuItem.state}}">
+        {{menuItem.title}}
+      </button>
+    </md-menu-bar>
+  </md-content>
+</md-sidenav>
+
+<div layout="column" flex>
+  <md-toolbar class="md-whiteframe-4dp" ng-if="!vm.$mdSidenav('hamburger').isLockedOpen()">
+    <div class="md-toolbar-tools"
+         layout="column"
+         layout-align="start center">
+      <div layout="row"
+           layout-align="start center"
+           class="top-bar">
+        <md-icon md-svg-src="img/ic_menu_white_24px.svg"
+                 ng-click="vm.openMenu()"
+                 class="md-button btn"></md-icon>
+      </div>
+        <h1 ng-bind="vm.$state.current.data.pageTitle"></h1>
+    </div>
+  </md-toolbar>
+  <md-content flex id="home-content" layout="column">
+    <md-content ui-view layout="column" flex autoscroll="true"></md-content>
+  </md-content>
+</div>

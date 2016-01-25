@@ -1,0 +1,38 @@
+<div layout="row"
+     layout-align="start center"
+     class="heading">
+  <div flex="5" layout="end center">
+    <md-icon md-svg-src="img/fire.svg"
+           ng-if="vm.campaign.status === 'hot'"></md-icon>
+    <md-icon md-svg-src="img/new.svg"
+             ng-if="vm.campaign.status === 'new'"></md-icon>
+    <md-icon ng-if="vm.campaign.status === 'none'"></md-icon>
+  </div>
+
+  <div flex layout="row" layout-align="start end">
+    <h2>{{vm.campaign.name}}</h2>
+    <h4>{{vm.campaign.date | date:'MM/dd/yyyy'}}</h4>
+  </div>
+</div>
+
+<div google-chart chart="barChart" flex></div>
+
+<ul flex="80" layout="column" layout-align="end" class="list">
+  <div layout="row"
+      layout-align="start end">
+    <h4 flex="40">Email Title</h4>
+    <h4 flex="20"># Of Users Opened</h4>
+    <h4 flex="20"># of Users Clicked</h4>
+    <h4 flex="20"># of Users Sent</h4>
+  </div>
+  <li ng-repeat="email in vm.campaign.emails | orderBy:'date':true"
+      layout="row"
+      layout-align="start end"
+      class="btn"
+      ng-click="vm.openEmail(email.id)">
+    <h2 flex="40">Email {{email['Send Date']}}</h2>
+    <h2 flex="20">{{email.Opened ? '1' : '0'}}</h2>
+    <h2 flex="20">{{email.Clicked ? '1' : '0'}}</h2>
+    <h2 flex="20">1</h2>
+  </li>
+</ul>

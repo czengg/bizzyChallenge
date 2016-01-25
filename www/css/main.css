@@ -1,0 +1,57 @@
+/* HOME STYLES*/
+.md-menu-toolbar .logo {
+  width: 10em;
+}
+
+/* UTILITY STYLES */
+.md-sidetoolbar-left {
+  width: 15em;
+}
+
+.md-sidetoolbar-left md-toolbar.md-menu-toolbar, .md-sidebar-left md-content, .md-sidetoolbar-left md-menu-bar, .md-sidetoolbar-left button, .blue-bg {
+  background-color: #47B7C3;
+  color: #fff;
+}
+
+button:not([disabled]):hover, button.active {
+  background-color: #fff;
+  color: #47B7C3;
+}
+
+button.active {
+  font-weight: bold;
+}
+
+.btn {
+  cursor: pointer;
+  min-width: 50px;
+}
+
+h1, h2 {
+  color: #265865;
+}
+
+h4 {
+  color: #7999A2;
+}
+
+li, .heading {
+  border-bottom: #9B9B9B solid 1px;
+  padding: .5em;
+}
+
+.heading {
+  margin-left: 1em;
+}
+
+li:hover {
+  background-color: #ebebeb;
+}
+
+li.overview h2, .heading h2 {
+  margin: auto .5em;
+}
+
+.list div h4 {
+  margin: auto .3em;
+}

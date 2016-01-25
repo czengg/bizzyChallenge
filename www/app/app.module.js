@@ -4,6 +4,7 @@
     .module('app', [
       'ngMaterial',
       'ui.router',
-      'ngAnimate'
+      'ngAnimate',
+      'googlechart'
     ]);
 })();
